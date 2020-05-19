@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Board" representedClassName="BoardMO" syncable="YES" codeGenerationType="class">
+        <attribute name="contents" optional="YES" attributeType="String"/>
+        <attribute name="regdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Log" inverseName="board" inverseEntity="Log"/>
+    </entity>
+    <entity name="Log" representedClassName="LogMO" syncable="YES" codeGenerationType="class">
+        <attribute name="regdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="board" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Board" inverseName="logs" inverseEntity="Board"/>
+    </entity>
+    <elements>
+        <element name="Board" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Log" positionX="-54" positionY="-9" width="128" height="88"/>
+    </elements>
+</model>
